@@ -140,7 +140,6 @@ def computeUnlockCode(imei):
 
 # Send AT codes to unlock the modem
 def unlockModem(port, lockCode):
-	return
 	ser = serial.Serial(port = port)
 	command = 'AT^CARDLOCK="'+ str(lockCode) + '"\r\n'
 	ser.write(command)
