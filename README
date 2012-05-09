@@ -1,0 +1,23 @@
+Huawei Modem Unlocker
+
+Copyright (C) 2012 Neil McPhail
+	<neil@mcphail.homedns.org>
+Portions Copyright (C) 2010 dogbert
+	<dogber1@gmail.com>
+
+Licence:
+	GNU GPL version 2
+
+Version:
+	0.1
+
+Requirements:
+	Linux
+	Python
+	pySerial
+
+Usage:
+	./unlocker.py (as root if necessary)
+
+Warranty:
+	none!
