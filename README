@@ -21,3 +21,32 @@ Usage:
 
 Warranty:
 	none!
+
+Huawei wireless broadband modems are well supported in Linux. When bought from
+a mobile carrier they are often locked to that carrier's network. This restricts
+your freedom to choose your own supplier and SIM.
+
+Unlocking these modems is simple but it has become the domain of malign and
+unscrupulous members of the underground warez scene. This program aims to
+simplify the process for Linux users.
+
+Method:
+	1. Insert the "foreign" SIM into your modem
+	2. Insert the modem into a spare USB port. Do not attempt to connect.
+	3. Run "./unlocker.py" (you may need to run this as root)
+	4. Accept the warning by typing "YES"
+	5. Confirm you wish to proceed with the unlocking procedure
+	6. Let me know whether it was a success or failure!
+
+Troubleshooting:
+	Make sure python-2 and pySerial are installed
+		(e.g. sudo apt-get install python-serial)
+
+	The Windows "Dashboard" software is untouched. Some carrier-modified
+	versions of this software prevent unlocked modems connecting to foreign
+	networks. You may need to update the Dashboard software to an unbranded
+	version. This is of no concern to Linux users and this software does
+	not help with that process.
+
+Bugs:
+	Please raise issues at https://github.com/mcphail/linux_huawei_unlocker
