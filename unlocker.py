@@ -86,7 +86,10 @@ def obtainImei(port):
 
 # Check the IMEI is correct
 # Adapted from dogbert's original
-def testImeiChecksum(digits):
+def testImeiChecksum(imei):
+	digits = []
+	for i in imei:
+		digits.append(int(i))
 	_sum = 0
 	alt = False
 	for d in reversed(digits):
@@ -170,13 +173,12 @@ def main():
 	else:
 		if (imei==''):
 			print "\nCould not obtain IMEI."
+			print "Check the modem is properly inserted"
+			print "Check a SIM card is in place"
+			print "Check you are not already connected"
 			exit(1)
 		else:
-			digits = []
-			for i in imei:
-				digits.append(int(i))
-
-			if not testImeiChecksum(digits):
+			if not testImeiChecksum(imei):
 				print "\nIMEI checksum invalid."
 				exit(1)
 			else:
