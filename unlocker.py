@@ -176,6 +176,7 @@ def main():
 			print "Check the modem is properly inserted"
 			print "Check a SIM card is in place"
 			print "Check you are not already connected"
+			print "Try removing and reinserting the device"
 			exit(1)
 		else:
 			if not testImeiChecksum(imei):
