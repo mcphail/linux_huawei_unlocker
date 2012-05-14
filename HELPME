@@ -1,0 +1,46 @@
+Thank you for all of the positive feedback about this software. It is pleasing
+to know that so many of you have found it useful. Whilst this software is given
+freely, I would like to make a humble request in return:
+
+********************************************************************************
+	If you use this software, please tell me if it works
+********************************************************************************
+
+I would like to make this software better, faster, slicker and simpler. However
+it is difficult to test new versions of the software because when I unlock a
+modem it _stays_ unlocked and is not useful for further tests. Furthermore,
+there are a bewildering array of these devices on the market and it would be
+useful for me to focus my testing on devices which have been difficult to
+unlock.
+
+If you have had a success or failure with this software please contact me so I
+can log it. I would be grateful if you would include the following information:
+	- Your Linux distribution and version (e.g. Ubuntu 12.04)
+	- Your version of Python and pySerial (if known)
+	- The model of your modem
+	- The country of purchase of your modem
+	- The original carrier for your modem
+	- The carrier of the SIM you used in the unlock process
+	- Any problems, failures or error messages
+	- Any suggestions for improvement.
+
+If you are a developer and would like to improve upon the code, please fork the
+repository on GitHub and submit a pull request. If you are not a developer and
+that last sentence was gibberish, please ignore it!
+
+Contact details:
+	https://github.com/mcphail/linux_huawei_unlocker
+	- GitHub repo page. Contact me here through the "issues" button
+
+	http://frecode.com/projects/linux-huawei-unlocker
+	- Freecode announcement page. Contact me by clicking "Report problem"
+
+	neil@mcphail.homedns.org
+	- Plain old simple email. This is the easiest way to contact me but
+	  other users will not benefit from a private email discussion. Use this
+	  if you don't want to register with GitHub or Freecode to leave a
+	  comment.
+
+Many thanks in anticipation,
+
+Neil McPhail
