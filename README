@@ -9,7 +9,7 @@ Licence:
 	GNU GPL version 2
 
 Version:
-	0.2
+	0.2.x
 
 Requirements:
 	Linux
@@ -36,6 +36,7 @@ Method:
 	3. Run "./unlocker.py" (you may need to run this as root)
 	4. Accept the warning by typing "YES"
 	5. Confirm you wish to proceed with the unlocking procedure
+		- there are only 10 attempts before the modem is locked for ever
 	6. Let me know whether it was a success or failure!
 
 Troubleshooting:
@@ -47,6 +48,9 @@ Troubleshooting:
 	networks. You may need to update the Dashboard software to an unbranded
 	version. This is of no concern to Linux users and this software does
 	not help with that process.
+
+	Early reports suggest that the E220 modem cannot be unlocked by this
+	program. When I get hold of one of those devices I will work on it.
 
 Bugs:
 	Please raise issues at https://github.com/mcphail/linux_huawei_unlocker

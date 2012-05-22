@@ -38,6 +38,9 @@ def intro():
 	print "\tThis software can damage your hardware"
 	print "\tUse it at your own risk"
 	print 80 * "*"
+	print "\tUsers of E220 modems should not use this program as others" 
+	print "\thave reported failures. I hope to fix this in a later release."
+	print 80 * "*"
 	print "If you wish to proceed, please type YES at the prompt"
 	response = raw_input(">> ")
 	if response != "YES":
@@ -104,7 +107,7 @@ def testImeiChecksum(imei):
 
 # Interrogate the lock status
 # Returns a dictionary with the lock status, remaining unlock attempts
-# and used unlock attempts
+# and the - largely unused - carrier code
 #
 # lockStatus 0 = unobtainable
 #            1 = locked but can be unlocked
@@ -122,11 +125,11 @@ def checkLockStatus(port):
 	response = ser.read(4096)
 	ser.close()
 
-	match = re.search('CARDLOCK: (\d),(\d\d?),(\d\d?)\r', response)
+	match = re.search('CARDLOCK: (\d),(\d\d?),(\d+)\r', response)
 	if match:
 		status['lockStatus'] = int(match.group(1))
 		status['remaining'] = int(match.group(2))
-		status['used'] = int(match.group(3))
+		status['carrier'] = int(match.group(3))
 	return status
 
 # Compute the unlock code
@@ -206,8 +209,8 @@ def main():
 			exit(1)
 		else:
 			print "\nThis SIM should be unlockable..."
-			print "Unsuccessful attempts: ", lockInfo['used']
 			print "Remaining attempts: ", lockInfo['remaining']
+			print "Exceeding this will hard-lock the modem"
 
 	unlockCode = computeUnlockCode(imei)
 	print "\nUnlock code = ", unlockCode
