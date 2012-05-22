@@ -114,7 +114,7 @@ def testImeiChecksum(imei):
 #            2 = unlocked to the inserted sim
 #            3 = locked and cannot be unlocked
 def checkLockStatus(port):
-	status = {'lockStatus': 0, 'remaining': 0, 'used': 0}
+	status = {'lockStatus': 0, 'remaining': 0, 'carrier': 0}
 	print "\nChecking the lock status of the SIM."
 	print "The modem will be given 5 seconds to respond."
 	ser = serial.Serial(port = port,
