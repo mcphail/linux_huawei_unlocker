@@ -24,7 +24,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-import time, serial, re, hashlib
+import time, serial, re, hashlib, glob
 
 # Intro
 def intro():
@@ -53,7 +53,7 @@ def intro():
 def identifyPort():
 	print "Trying to find which port is the active modem connection."
 	print "Please be patient as this can take a while.\n\n"
-	for p in ["/dev/ttyUSB0", "/dev/ttyUSB1", "/dev/ttyUSB2"]:
+	for p in glob.glob('/dev/ttyUSB*'):
 		print "Testing port " + p
 		ser = serial.Serial(port = p,
 				timeout = 15)
