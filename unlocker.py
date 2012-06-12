@@ -41,11 +41,26 @@ def intro():
 	print "\tUsers of E220 modems should not use this program as others" 
 	print "\thave reported failures. I hope to fix this in a later release."
 	print 80 * "*"
-	print "If you wish to proceed, please type YES at the prompt"
-	response = raw_input(">> ")
-	if response != "YES":
+	if not _requireYes():
 		print "Bye"
 		exit(0)
+
+# Helper function
+# Require an explicit "YES" in upper case
+# Returns True if "YES"
+# Asks for explicit uppercase "YES" if mixed or lower case used
+# Returns False for anything else
+def _requireYes():
+	print "If you wish to proceed, please type YES at the prompt"
+	while 1:
+		response = raw_input(">> ")
+		if response == "YES":
+			return True
+		if response.upper() == "YES":
+			print "You must type YES in upper case to proceed"
+			continue
+		else:
+			return False
 
 # These modems seem to open 3 USB serial ports. Only one is the control port
 # and this seems to vary from device to device. The other 2 ports appear to
@@ -215,10 +230,9 @@ def main():
 	unlockCode = computeUnlockCode(imei)
 	print "\nUnlock code = ", unlockCode
 	print "Please be aware that a failed unlocking attempt could break your modem."
-	print "If you wish to risk it, type YES at the prompt."
-	input = raw_input(">> ")
-	if input != 'YES':
-		print "Aborting."
+	print "This is a risky procedure."
+	if not _requireYes():
+		print "Unlocking aborted"
 		exit(0)
 
 	print "\nAttempting to unlock..."
