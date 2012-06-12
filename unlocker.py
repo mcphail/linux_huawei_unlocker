@@ -38,8 +38,11 @@ def intro():
 	print "\tThis software can damage your hardware"
 	print "\tUse it at your own risk"
 	print 80 * "*"
-	print "\tUsers of E220 modems should not use this program as others" 
-	print "\thave reported failures. I hope to fix this in a later release."
+	print "\tNot all modems can be unlocked with this software."
+	print "\tUsers have reported problems with the following devices:"
+	print "\t\tE220, E353"
+	print "\tAttempting to unlock these devices with this software is not"
+	print "\trecommended. I hope to fix this in a later release."
 	print 80 * "*"
 	if not _requireYes():
 		print "Bye"

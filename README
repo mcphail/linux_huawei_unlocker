@@ -49,8 +49,8 @@ Troubleshooting:
 	version. This is of no concern to Linux users and this software does
 	not help with that process.
 
-	Early reports suggest that the E220 modem cannot be unlocked by this
-	program. When I get hold of one of those devices I will work on it.
+	Early reports suggest that some modems cannot be unlocked by this
+	program. When I get hold of one of these devices I will work on it.
 
 Bugs:
 	Please raise issues at https://github.com/mcphail/linux_huawei_unlocker
