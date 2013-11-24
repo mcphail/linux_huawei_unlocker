@@ -9,7 +9,7 @@ Licence:
 	GNU GPL version 2
 
 Version:
-	0.3
+	0.4
 
 Requirements:
 	Linux
@@ -51,6 +51,13 @@ Troubleshooting:
 
 	Early reports suggest that some modems cannot be unlocked by this
 	program. When I get hold of one of these devices I will work on it.
+
+	E220 devices will not work. I don not think they will ever work with
+	this script.
+
+	Devices beginning "E3" are unlikely to work at this point. I hope to
+	support these in a future version. If you have such a device and decide
+	to try this script please give me feedback on the link below.
 
 Bugs:
 	Please raise issues at https://github.com/mcphail/linux_huawei_unlocker

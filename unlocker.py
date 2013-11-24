@@ -3,7 +3,7 @@
 # unlocker.py
 # - Remove simlock on huawei modems
 #
-# Copyright (C) 2012 Neil McPhail
+# Copyright (C) 2013 Neil McPhail
 #		neil@mcphail.homedns.org
 #
 # Unlock code generator Copyright (C) 2010 dogbert
@@ -123,6 +123,18 @@ def testImeiChecksum(imei):
 		alt = not alt
 	return (_sum % 10) == 0
 
+# Display a warning if first digit of IMEI indicates a potentially troublesome
+# modem
+def checkImeiCompatibility(imei):
+	if ('8' == imei[0]):
+		print 80 * "*"
+		print "\n\tWarning"
+		print "\n\tYour modem's IMEI begins with '8'"
+		print "\tIt is likely to be incompatible with this script"
+		print "\tProceed at your own risk"
+		print "\n\tPlease provide feedback: see README and HELPME\n"
+		print 80 * "*"
+
 # Interrogate the lock status
 # Returns a dictionary with the lock status, remaining unlock attempts
 # and the - largely unused - carrier code
@@ -205,6 +217,7 @@ def main():
 				exit(1)
 			else:
 				print "IMEI checksum OK."
+				checkImeiCompatibility(imei)
 
 	# Obtain lockstatus
 	try:
