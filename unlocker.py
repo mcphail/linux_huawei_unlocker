@@ -75,6 +75,7 @@ def identifyPort():
 		print "Testing port " + p
 		ser = serial.Serial(port = p,
 				timeout = 15)
+		ser.write('AT\r\n')
 		activity = ser.read(5)
 		if activity == '':
 			print "\tNo activity\n"
