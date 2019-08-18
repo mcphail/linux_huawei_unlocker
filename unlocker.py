@@ -74,14 +74,14 @@ def identifyPort():
 	for p in glob.glob('/dev/ttyUSB*'):
 		print "Testing port " + p
 		ser = serial.Serial(port = p,
-				timeout = 15)
+				timeout = 15, rtscts = True, dsrdtr = True)
 		ser.write('AT\r\n')
 		activity = ser.read(5)
 		if activity == '':
 			print "\tNo activity\n"
 			ser.close()
 			continue
-		
+
 		print "\tActivity detected\n"
 		ser.close()
 		return p
@@ -92,7 +92,7 @@ def obtainImei(port):
 	print "\nTrying to obtain IMEI."
 	print "The modem will be given 5 seconds to respond."
 	ser = serial.Serial(port = port,
-			timeout = 0)
+			timeout = 0, rtscts = True, dsrdtr = True)
 	ser.flushInput()
 	ser.write('AT+CGSN\r\n')
 	time.sleep(5)
@@ -149,7 +149,7 @@ def checkLockStatus(port):
 	print "\nChecking the lock status of the SIM."
 	print "The modem will be given 5 seconds to respond."
 	ser = serial.Serial(port = port,
-			timeout = 0)
+			timeout = 0, rtscts = True, dsrdtr = True)
 	ser.flushInput()
 	ser.write('AT^CARDLOCK?\r\n')
 	time.sleep(5)
@@ -177,7 +177,7 @@ def computeUnlockCode(imei):
 
 # Send AT codes to unlock the modem
 def unlockModem(port, lockCode):
-	ser = serial.Serial(port = port)
+	ser = serial.Serial(port = port, rtscts = True, dsrdtr = True)
 	command = 'AT^CARDLOCK="'+ str(lockCode) + '"\r\n'
 	ser.write(command)
 	ser.close()
