@@ -1,9 +1,20 @@
 Huawei Modem Unlocker
 
 Copyright (C) 2012 Neil McPhail
-	<neil@mcphail.homedns.org>
+	<neil@themcphails.uk>
 Portions Copyright (C) 2010 dogbert
 	<dogber1@gmail.com>
+
+*******************************************************************************
+This utility is now deprecated
+
+I cannot maintain this application and do not have the skills to convert it to
+python3. Developers with an interest in this utility are encouraged to fork the
+repository. I would be happy to pass on the baton of maintenance to anyone who
+can demonstrate commitment to modernising the code.
+
+Thank you for your interest in this software.
+*******************************************************************************
 
 Licence:
 	GNU GPL version 2
